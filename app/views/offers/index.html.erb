@@ -1,0 +1,16 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Offers</h1>
+
+  <div id="offers">
+    <% @offers.each do |offer| %>
+      <%= render offer %>
+      <p>
+        <%= link_to "Dettagli", offer, class: 'btn btn-primary w-100' %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "Nuova offerta", new_offer_path, class: 'btn btn-warning w-100' %>
+</div>

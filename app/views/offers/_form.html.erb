@@ -1,0 +1,37 @@
+<%= form_with(model: offer) do |form| %>
+  <% if offer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+      <ul>
+        <% offer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :rif, class: 'from-label' %>
+    <%= form.number_field :rif, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :titolo, class: 'from-label' %>
+    <%= form.text_field :titolo, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :descrizione, class: 'from-label' %>
+    <%= form.text_area :descrizione, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :luogo, class: 'from-label' %>
+    <%= form.text_field :luogo, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit 'Salva', class: 'btn btn-primary w-100' %>
+  </div>
+<% end %>

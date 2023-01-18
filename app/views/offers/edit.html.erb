@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Modifica offerta di lavoro</h1>
+
+  <%= render "form", offer: @offer %>
+
+  <br>
+
+  <div>
+    <%= link_to "Visualizza l'offerta", @offer %> |
+    <%= link_to "torna alle offerte", offers_path %>
+  </div>
+</div>
